@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "65738840441",
+    "project_id": "flutternovel",
+    "storage_bucket": "flutternovel.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65738840441:android:089cbe86204c05a1ecf7a8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_novel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65738840441-19j8crhttfh4kkaoa0p73oqlbjli6eni.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjwPXlhaLy30HIvKTkcGIPnQlt3rQfp_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65738840441-19j8crhttfh4kkaoa0p73oqlbjli6eni.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
