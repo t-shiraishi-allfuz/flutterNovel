@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "65738840441-19j8crhttfh4kkaoa0p73oqlbjli6eni.apps.googleusercontent.com",
+          "client_id": "65738840441-8jnv2aa6ighon4urino372h9ncf0enba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.flutter_novel",
+            "certificate_hash": "b022f68b206aac57879d610739f452e4b4639b0a"
+          }
+        },
+        {
+          "client_id": "65738840441-3in29moj78hlnptrnjklnejvj394hm0n.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -29,6 +37,13 @@
             {
               "client_id": "65738840441-19j8crhttfh4kkaoa0p73oqlbjli6eni.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "65738840441-sjuk0tm4qk16hlffbor65at7epj60fo8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterNovel"
+              }
             }
           ]
         }
