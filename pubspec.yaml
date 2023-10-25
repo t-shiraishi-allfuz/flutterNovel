@@ -40,4 +40,5 @@ flutter:
   assets:
     - images/bg/
     - images/chara/
+    - images/parts/
     - json/

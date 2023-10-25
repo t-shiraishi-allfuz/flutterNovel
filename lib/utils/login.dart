@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter_novel/models/user.dart';
+import 'package:flutter_novel/models/user_play_data.dart';
 import 'package:flutter_novel/utils/custom_shared.dart';
 import 'package:flutter_novel/utils/dialog.dart';
 
@@ -63,6 +64,7 @@ class Login {
 			await CustomShared.saveUID(user!.uid);
 			// ユーザーデータを保存
 			await UserModel.addData(user!.uid, inputMail);
+			await UserPlayDataModel.addData(user!.uid);
 		} on FirebaseAuthException catch (e) {
 			print("登録エラー：${e.code}");
 			String title = "登録エラー";
@@ -83,12 +85,12 @@ class Login {
 			try {
 				final UserCredential authResult = await auth.signInWithPopup(authProvider);
 				user = authResult.user;
-				print("user:${user}");
 
 				// UIDをキャッシュに保存
 				await CustomShared.saveUID(user!.uid);
 				// ユーザーデータを保存
 				await UserModel.addData(user!.uid, user!.email!);
+				await UserPlayDataModel.addData(user!.uid);
 			} on FirebaseAuthException catch (e) {
 				String title = "認証エラー";
 				String message = "アカウントが存在しません";
@@ -116,6 +118,7 @@ class Login {
 					await CustomShared.saveUID(user!.uid);
 					// ユーザーデータを保存
 					await UserModel.addData(user!.uid, user!.email!);
+					await UserPlayDataModel.addData(user!.uid);
 				} on FirebaseAuthException catch (e) {
 					String title = "認証エラー";
 					String message = "アカウントが存在しません";

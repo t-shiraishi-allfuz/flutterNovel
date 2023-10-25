@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 
 class GoogleApiSettings {
 	static String spreadsheetId = "1uv37jqIgqYYWZBV8JdRaSmIRTQE_Z_T7N-m54IgY8XU";
-	static String range = 'chara!A1:A7';
+	static String range = 'chara!A2:B8';
 
 	static Future<SheetsApi> getClient() async {
 		final String jsonString = await rootBundle.loadString("json/googleapi_auth.json");
@@ -27,11 +27,11 @@ class GoogleApiSettings {
 		return sheetsApi;
 	}
 
-	static Future<List<List<dynamic>>?> createGoogleSheetsApiGetUrl() async {
+	static Future<List<List<dynamic>>> createGoogleSheetsApiGetUrl(String range) async {
 		final sheetsApi = await getClient();
 
 		ValueRange response = await sheetsApi.spreadsheets.values.get(spreadsheetId, range);
 
-		return response.values;
+		return response.values!;
 	}
 }
