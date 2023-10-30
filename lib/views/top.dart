@@ -34,7 +34,7 @@ class _TopViewState extends State<TopView> {
       future: uidFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return LoadingWidget();
+          return const LoadingWidget();
         } else if (snapshot.hasError) {
           return const Center(child: Text("エラーが発生しました"));
         } else {
