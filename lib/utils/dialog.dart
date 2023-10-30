@@ -67,7 +67,7 @@ class CustomDialogWidget {
       await UserPlayDataModel.updateData(user);
     }
 
-    final result = await showDialog(
+    await showDialog(
       context: context,
       builder: (BuildContext context) {
         return Dialog(

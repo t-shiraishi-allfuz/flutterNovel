@@ -84,8 +84,8 @@ class GameLogic {
     body = body.replaceAll("{nickname}", userPlayData.nickname);
     String? charaImage = message[2].isNotEmpty ? message[2] as String : null;
     String bg = message[3] as String;
-    dynamic? effect = message.length >= 5 ? message[4] : null;
-    dynamic? function = message.length >= 6 ? message[5] : null;
+    dynamic effect = message.length >= 5 ? message[4] : null;
+    dynamic function = message.length >= 6 ? message[5] : null;
     int? nextScene = message.length >= 7 ? int.parse(message[6]) : null;
 
     return MessageModel(

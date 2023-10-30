@@ -42,7 +42,7 @@ class Login {
 
       // UIDをキャッシュに保存
       await CustomShared.saveUID(user!.uid);
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       String title = "認証エラー";
       String message = "アカウントが存在しません";
 
@@ -66,7 +66,7 @@ class Login {
       // ユーザーデータを保存
       await UserModel.addData(user!.uid, inputMail);
       await UserPlayDataModel.addData(user!.uid);
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       String title = "登録エラー";
       String message = "予期せぬエラーが発生しました";
 
@@ -89,7 +89,7 @@ class Login {
         // ユーザーデータを保存
         await UserModel.addData(user!.uid, user!.email!);
         await UserPlayDataModel.addData(user!.uid);
-      } on FirebaseAuthException catch (e) {
+      } on FirebaseAuthException {
         String title = "認証エラー";
         String message = "アカウントが存在しません";
 
@@ -119,7 +119,7 @@ class Login {
           // ユーザーデータを保存
           await UserModel.addData(user!.uid, user!.email!);
           await UserPlayDataModel.addData(user!.uid);
-        } on FirebaseAuthException catch (e) {
+        } on FirebaseAuthException {
           String title = "認証エラー";
           String message = "アカウントが存在しません";
 

@@ -118,6 +118,7 @@ class _LoginViewState extends State<LoginView> {
                       if (value == "") {
                         return "パスワードが入力されていません";
                       }
+                      return null;
                     },
                     onSaved: (value) {
                       inputPass = value!;

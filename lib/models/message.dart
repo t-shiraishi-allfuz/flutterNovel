@@ -5,8 +5,8 @@ class MessageModel {
   final String body;
   final String? charaImage;
   final String bg;
-  final dynamic? effect;
-  final dynamic? function;
+  final dynamic effect;
+  final dynamic function;
   final int? nextScene;
 
   MessageModel({

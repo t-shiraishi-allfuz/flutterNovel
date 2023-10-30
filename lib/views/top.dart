@@ -18,6 +18,7 @@ class _TopViewState extends State<TopView> {
 
   @override
   void initState() {
+    super.initState();
     uidFuture = getUID();
     user = Login.getCurrentUser();
   }
