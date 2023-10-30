@@ -1,27 +1,36 @@
 // シナリオデータ
 class MessageModel {
-	final String member_id;
-	final String name;
-	final String body;
-	final String bg;
-	final String chara_image;
+  final String memberId;
+  final String name;
+  final String body;
+  final String? charaImage;
+  final String bg;
+  final dynamic? effect;
+  final dynamic? function;
+  final int? nextScene;
 
-	MessageModel({
-		required this.member_id,
-		required this.name,
-		required this.body,
-		required this.bg,
-		required this.chara_image,
-	});
+  MessageModel({
+    required this.memberId,
+    required this.name,
+    required this.body,
+    this.charaImage,
+    required this.bg,
+    this.effect,
+    this.function,
+    this.nextScene,
+  });
 
-	@override
-	String toString() {
-		return 'MessageModel('
-			'member_id: $member_id,'
-			'name: $name,'
-			'body: $body,'
-			'bg: $bg,'
-			'chara_image: $chara_image,'
-		')';
-	}
+  @override
+  String toString() {
+    return 'MessageModel('
+        'memberId: $memberId,'
+        'name: $name,'
+        'body: $body,'
+        'charaImage: $charaImage,'
+        'bg: $bg,'
+        'effect: $effect,'
+        'function: $function,'
+        'nextScene: $nextScene,'
+        ')';
+  }
 }

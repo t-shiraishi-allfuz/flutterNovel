@@ -6,7 +6,7 @@ class UserPlayDataModel {
 
 	final String uid;
 	String nickname;  // ニックネーム
-	int shene;    	 // 進行中のシーンID
+	int scene;    	 // 進行中のシーンID
 	int stamina;  	 // 体力
 	int academic; 	 // 学力
 	int motion;   	 // 運動
@@ -16,7 +16,7 @@ class UserPlayDataModel {
 	UserPlayDataModel({
 		required this.uid,
 		this.nickname = "",
-		this.shene = 0,
+		this.scene = 0,
 		this.stamina = 100,
 		this.academic = 10,
 		this.motion = 10,
@@ -28,7 +28,7 @@ class UserPlayDataModel {
 		return {
 			'uid': uid,
 			'nickname': nickname,
-			'shene': shene,
+			'scene': scene,
 			'stamina': stamina,
 			'academic': academic,
 			'motion': motion,
@@ -41,7 +41,7 @@ class UserPlayDataModel {
 		return UserPlayDataModel(
 			uid: map['uid'],
 			nickname: map['nickname'],
-			shene: map['shene'],
+			scene: map['scene'],
 			stamina: map['stamina'],
 			academic: map['academic'],
 			motion: map['motion'],
@@ -55,7 +55,7 @@ class UserPlayDataModel {
 		return 'UserPlayDataModel('
 			'uid: $uid,'
 			'nickname: $nickname,'
-			'shene: $shene,'
+			'scene: $scene,'
 			'stamina: $stamina,'
 			'academic: $academic,'
 			'motion: $motion,'
@@ -73,6 +73,14 @@ class UserPlayDataModel {
 	// データ削除
 	static Future<void> deleteData(String id) async {
 		await store.doc(id).delete();
+	}
+
+	// データ更新
+	static Future<void> updateData(UserPlayDataModel updateData) async {
+		final snapshot = await store.where('uid', isEqualTo: updateData.uid).get();
+		snapshot.docs.forEach((doc) {
+			doc.reference.update(updateData.toMap());
+		});
 	}
 
 	// データ取得
